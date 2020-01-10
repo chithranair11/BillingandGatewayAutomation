@@ -16,11 +16,11 @@ import com.pratian.billingandgatewayTests.testlisteners.TestListener;
 
 public class HomePage extends Page {
 
-	private final String siteUrl = "http://www.bestbuy.ca";
-	private final String reviewUrl = "https://www.bestbuy.ca/en-ca/create-review/13527021/";
-	private final String expectedUrl = "www.bestbuy.ca";
-	private final String expectedUrl1 = "https://www.bestbuy.ca/en-ca/create-review/13527021/";
-	private final String expectedTitle = "Best Buy Canada";
+	private final String siteUrl = "https://test-claims.accesshealthcarephysiciansllc.net/";
+	
+	private final String expectedUrl = "https://test-claims.accesshealthcarephysiciansllc.net/";
+	
+	private final String expectedTitle = "";
 
 
 
@@ -67,15 +67,7 @@ public class HomePage extends Page {
 		return this;
 	}
 
-	// created new
-	public HomePage openReview() {
-		getDriver().get(reviewUrl);
-
-		if (!urlContains(expectedUrl1))
-			throw new HtmlElementsException(homePageError);
-
-		return this;
-	}		
+	
 	
 //	public SigninPage getSigninPage() {
 //		wait.until(ExpectedConditions.visibilityOf(signinBtn)).click();
