@@ -1,0 +1,50 @@
+3
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+ 
+<suite name="Suite" parallel="none">
+ 
+ <test name="FirefoxTest">
+ 
+ <parameter name="browser" value="firefox" />
+ 
+ <classes>
+ 
+ <class name="automationFramework.MultiBrowser" />
+ 
+ </classes>
+ 
+ </test>
+ 
+ <test name="IETest">
+ 
+ <parameter name="browser" value="ie" />
+ 
+ <classes>
+ 
+ <class name="automationFramework.MultiBrowser" />
+ 
+ </classes>
+ 
+ </test>
+ 
+</suite>
