@@ -8,19 +8,19 @@ import com.pratian.billingandgateway.element.HtmlElement;
 import com.pratian.billingandgateway.element.TextInput;
 
 @Name("LOGIN_HEADER")
-@FindBy(className = "_2lBc-")
+@FindBy(xpath = "/html/body/div[1]/div[2]/form/div/div/div/div[3]")
 public class Login extends HtmlElement {
 
 	@Name("Username")
-	@FindBy(id = "email")
+	@FindBy(id = "userId")
 	private TextInput username;
 
 	@Name("Password")
-	@FindBy(id = "password")
+	@FindBy(id = "Password")
 	private TextInput password;
 
 	@Name("SignIn")
-	@FindBy(xpath = "//*[@id=\"signIn\"]/div/button/span/span")
+	@FindBy(xpath = "/html/body/div[1]/div[2]/form/div/div/div/div[3]/fieldset/div[6]/div/input")
 	private Button signInapp;
 
 
