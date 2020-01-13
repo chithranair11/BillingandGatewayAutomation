@@ -7,8 +7,8 @@ import com.pratian.billingandgateway.element.Button;
 import com.pratian.billingandgateway.element.HtmlElement;
 import com.pratian.billingandgateway.element.TextInput;
 
-@Name("LOGIN_HEADER")
-@FindBy(xpath = "/html/body/div[1]/div[2]/form/div/div/div/div[3]")
+//@Name("LOGIN_HEADER")
+//@FindBy(xpath = "/html/body/div[1]/div[2]/form/div/div/div/div[3]")
 public class Login extends HtmlElement {
 
 	@Name("Username")
