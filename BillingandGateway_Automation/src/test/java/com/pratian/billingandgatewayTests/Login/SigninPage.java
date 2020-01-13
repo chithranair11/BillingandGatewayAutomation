@@ -1,5 +1,7 @@
 package com.pratian.billingandgatewayTests.Login;
 
+import java.util.Properties;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +14,6 @@ import com.pratian.billingandgateway.element.TextInput;
 import com.pratian.billingandgateway.exceptions.HtmlElementsException;
 import com.pratian.billingandgateway.loader.HtmlElementLoader;
 import com.pratian.billingandgateway.utils.Driver.BrowserDriver;
-import com.pratian.billingandgatewayTests.Login.Login;
 import com.pratian.billingandgatewayTests.Page.*;
 import com.pratian.billingandgatewayTests.testlisteners.TestListener;
 import com.pratian.billingandgatewayTests.HomePage.*;
@@ -20,7 +21,6 @@ import com.pratian.billingandgatewayTests.HomePage.*;
 public class SigninPage extends Page {
 	
 	BrowserDriver browserDriver;
-	private Login login;
 	private final String siteUrl = "https://test-claims.accesshealthcarephysiciansllc.net/";
 	private final String expectedUrl = "https://test-claims.accesshealthcarephysiciansllc.net/";
 	private final String expectedTitle = "";
@@ -63,8 +63,11 @@ public class SigninPage extends Page {
 		return this;
 	}
 
+
+
 	
-	public HomePage Login(String Username, String Password) throws InterruptedException {
+	public HomePage Login(String Username, String Password) throws InterruptedException 
+	{
 		username.click();
 		username.sendKeys(Username);
 		password.click();
