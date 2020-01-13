@@ -1,29 +1,24 @@
 package com.pratian.billingandgatewayTests.HomePage;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-
 import com.pratian.billingandgateway.annotations.Name;
 import com.pratian.billingandgateway.element.Button;
-import com.pratian.billingandgateway.element.HtmlElement;
-import com.pratian.billingandgateway.element.Link;
 import com.pratian.billingandgateway.element.TextInput;
-import com.pratian.billingandgateway.exceptions.HtmlElementsException;
-import com.pratian.billingandgateway.loader.HtmlElementLoader;
 import com.pratian.billingandgateway.utils.Driver.BrowserDriver;
 import com.pratian.billingandgatewayTests.Login.SigninPage;
+import com.pratian.billingandgatewayTests.Member.AddMember;
 import com.pratian.billingandgatewayTests.Page.*;
 import com.pratian.billingandgatewayTests.testlisteners.TestListener;
 
-public class HomePage extends Page {
+public class HomePage {
 	
-	BrowserDriver browserDriver;
+	WebDriver driver;
 	
 	
-	@Name("Addmemberlink")
-	@FindBy(id = "Add Member")
-	private TextInput Addmemberlink;
+
+	private By  Addmemberlink= By.id("Add Member");
 
 	@Name("Password")
 	@FindBy(id = "Password")
@@ -34,16 +29,16 @@ public class HomePage extends Page {
 	private Button signInapp;
 
 
+
 	public HomePage(WebDriver driver) {
-		super(driver);
-		browserDriver = (BrowserDriver) getDriver();
-		HtmlElementLoader.populatePageObject(this, driver);
+		this.driver=driver;
 	}
 
 	
-	public boolean getAddmemberlink()
+	public boolean getAddmemberlink() throws InterruptedException
 	   {
-		if (Addmemberlink.isDisplayed() && Addmemberlink.isEnabled()) {
+		Thread.sleep(2000);
+		if (driver.findElement(Addmemberlink).isDisplayed() && driver.findElement(Addmemberlink).isEnabled()) {
 		   
 	     return  true;
 	    }
