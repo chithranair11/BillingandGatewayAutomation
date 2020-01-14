@@ -12,7 +12,7 @@ import org.testng.ITestResult;
 import com.aventstack.extentreports.MediaEntityBuilder;
 import com.aventstack.extentreports.Status;
 import com.pratian.billingandgateway.exceptions.HtmlElementsException;
-import com.pratian.billingandgateway.utils.Driver.BrowserDriver;
+
 import com.pratian.billingandgateway.utils.Driver.Screenshot;
 
 import org.openqa.selenium.WebDriver;
@@ -101,7 +101,8 @@ public class TestListener implements ITestListener {
 			Class<? extends ITestResult> baseTestClass = (Class<? extends ITestResult>) testClass.getSuperclass();
 
 			Field driverField = baseTestClass.getDeclaredField("driver");
-			driver = (BrowserDriver) driverField.get(result.getInstance());
+		
+		    driverField.get(result.getInstance());
 			return driver;
 		} catch (SecurityException | NoSuchFieldException | IllegalArgumentException ex) {
 			throw new HtmlElementsException("error getting the driver from base test");
