@@ -4,6 +4,8 @@ import com.pratian.billingandgateway.utils.Property.PropertyFile;
 import com.pratian.billingandgateway.Pages.HomePage;
 import com.pratian.billingandgateway.Pages.SigninPage;
 import com.pratian.billingandgateway.Pages.AddMember;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
@@ -59,5 +61,29 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		driver.close();
 	}
+	
+	@Test(enabled = true)
+	public void addmemberMandatoryMessages() throws InterruptedException {
+
+		// TestListener.reportLog("Add member Link");
+		PropertyFile propertyfile = new PropertyFile();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+
+		// Verifying the Add member link is present and enabled in the page
+
+		AddMember addmember = new AddMember(driver);
+
+		addmember.addmemberlinkClick();
+		js.executeScript("window.scrollBy(0,1000)");
+		addmember.clickOnSaveButton();
+
+		driver.close();
+	}
+
 
 }

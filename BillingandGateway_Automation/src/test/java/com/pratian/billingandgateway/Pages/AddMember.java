@@ -3,10 +3,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 
-public class AddMember {
+public class AddMember
+{
 	WebDriver driver;
 
-	public AddMember(WebDriver driver) {
+	public AddMember(WebDriver driver)
+	{
 		this.driver=driver;
 
 	}
@@ -24,9 +26,17 @@ public class AddMember {
 
 	}
 
-	public String getPageTitle() {
+	public String getPageTitle() 
+	{
 		return driver.findElement(AddMemberPageTitle).getText();
 
 	}
 
+	public boolean clickOnSaveButton() throws InterruptedException{
+		
+		
+		return false;
+		
+		
+	}
 }
