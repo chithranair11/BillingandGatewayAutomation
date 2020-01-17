@@ -2,10 +2,7 @@ package com.pratian.billingandgateway.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.support.FindBy;
-import com.pratian.billingandgateway.annotations.Name;
-import com.pratian.billingandgateway.element.Button;
-import com.pratian.billingandgateway.element.TextInput;
+
 
 public class HomePage {
 
