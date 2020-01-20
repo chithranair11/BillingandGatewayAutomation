@@ -8,12 +8,20 @@ public class HomePage {
 
 	WebDriver driver;
 
+
 	private By Addmemberlink = By.id("Add Member");
 
 	private By Searchmemberlink = By.id("Search Member");
+	
+	private By HomePageTitle=By.xpath("/html/body/div[2]/div/div[2]/div[3]/div[1]/div[3]/div[1]/div/div[1]/div/form[1]/div[2]/label[1]");
 
 	public HomePage(WebDriver driver) {
 		this.driver = driver;
+	}
+	
+	public String getPageTitle() throws InterruptedException {
+		
+		return driver.findElement(HomePageTitle).getText();
 	}
 
 	public boolean getAddmemberlink() throws InterruptedException {

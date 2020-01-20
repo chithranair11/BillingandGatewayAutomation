@@ -15,9 +15,9 @@ import org.testng.annotations.*;
 public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestClass
 
 {
-	List<String> mandatoryMessages= new ArrayList<String>();
-	
-	@Test(enabled = false)
+	List<String> mandatoryMessages = new ArrayList<String>();
+
+	@Test(enabled = true)
 	public void addmemberLink() throws InterruptedException {
 
 		// TestListener.reportLog("Add member Link");
@@ -39,7 +39,7 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 		driver.close();
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void addmemberPageTitle() throws InterruptedException {
 
 		// TestListener.reportLog("Add member Link");
@@ -64,38 +64,38 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		driver.close();
 	}
-	
+
 	@Test(enabled = true)
 	public void addmemberSaveButton() throws InterruptedException {
 
-		
 		PropertyFile propertyfile = new PropertyFile();
 		SigninPage signin = new SigninPage(driver);
 		signin.open();
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
 		Thread.sleep(2000);
 		addmember.addmemberlinkClick();
 		Thread.sleep(2000);
-		if(addmember.checkSaveButton())
-		{
+		
+		// Save button in Add memeber Page is present and enabled
+		if (addmember.checkSaveButton()) {
 			System.out.println("Save Button is visible and enabled in the add member page");
 		}
-		
+
 		Thread.sleep(2000);
-		
+
 		driver.close();
 	}
-	@Test(enabled = false)
+
+	@Test(enabled = true)
 	public void checkMandatoryFieldMessages() throws InterruptedException {
 
-	
 		PropertyFile propertyfile = new PropertyFile();
 		SigninPage signin = new SigninPage(driver);
 		signin.open();
-		//Thread.sleep(2000);
+		// Thread.sleep(2000);
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
@@ -122,4 +122,203 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 		driver.close();
 	}
 
+	@Test(enabled = true)
+	public void addmemberCancelButton() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		if (addmember.checkCancelButton()) {
+			System.out.println("Cancel Button is visible and enabled in the add member page");
+		}
+
+		Thread.sleep(2000);
+
+		driver.close();
+	}
+
+	@Test(enabled = true)
+	public void addmemberCancelButtonNavigation() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		HomePage home = new HomePage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		addmember.clickOnCancelButton();
+		Thread.sleep(5000);
+		//Verifying the add member cancel button and title of the navigated page
+		String expectedTitle = "Claims Status";
+		String actualTitle = home.getPageTitle();
+		Assert.assertEquals(actualTitle, expectedTitle);
+
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkMemberTermdateAutofill() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		
+		//Verifying the add member MemberTermdate Field auto fill 
+		String expectedValue = "12/31/9999";
+		String actualValue = addmember.memberTermdateAutofill();
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.close();
+
+	}
+
+
+	@Test(enabled = true)
+	public void checkAddressTermdateAutofill() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		
+		//Verifying the add member AddressTermdate Field auto fill 
+		String expectedValue = "12/31/9999";
+		String actualValue = addmember.addressTermdateAutofill();
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkPlanTermdateAutofill() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		
+		//Verifying the add member PlanTermdate Field auto fill 
+		String expectedValue = "12/31/9999";
+		String actualValue = addmember.planTermdateAutofill();
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkpcpTermdateAutofill() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		
+		//Verifying the add member pcpTermdate Field auto fill 
+		String expectedValue = "12/31/9999";
+		String actualValue = addmember.pcpTermdateAutofill();
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkpatientRelationshipAutofill() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		
+		//Verifying the add member patientRelationship Field auto fill 
+		String expectedValue = "SELF";
+		String actualValue = addmember.patientRelationshipAutofill();
+		Assert.assertEquals(actualValue, expectedValue);
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkpatientRelationshipReadOnly() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		// Thread.sleep(2000);
+
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		//Verifying the add member patientRelationship Field Read Only 
+        Assert.assertTrue(addmember.patientRelationshipReadOnly().getAttribute("readOnly").equals("true"),"Element ReadOnly");
+		driver.close();
+
+	}
+	
+	@Test(enabled = true)
+	public void checkUploadbutton() throws InterruptedException {
+
+		PropertyFile propertyfile = new PropertyFile();
+		SigninPage signin = new SigninPage(driver);
+		signin.open();
+		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
+		AddMember addmember = new AddMember(driver);
+		Thread.sleep(2000);
+		addmember.addmemberlinkClick();
+		Thread.sleep(2000);
+		//Verifying the add member document upload button 
+        if(addmember.checkUploadButton())
+        {
+        	
+        	System.out.println("Document Upload button is displayed and enabled");
+        }
+        
+        Thread.sleep(2000);
+		driver.close();
+
+	}
 }
