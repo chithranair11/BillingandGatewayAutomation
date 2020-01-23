@@ -7,7 +7,7 @@ pipeline {
 
                     steps {
 
-                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/DeepaUike/UMAutomationProject.git']]])// Common git hub repository URL.
+                        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/chithranair11/BillingandGatewayAutomation.git']]])// Common git hub repository URL.
 
                          }        
 
@@ -25,7 +25,7 @@ pipeline {
 
                             steps {
 
-                                     dir("UMAuto"){//needs to mention folder name if we are having any folders in the repository otherwise no need to mention dir.
+                                     dir("BillingandGatewayAutomation"){//needs to mention folder name if we are having any folders in the repository otherwise no need to mention dir.
 
                                powershell 'mvn clean package'
 
