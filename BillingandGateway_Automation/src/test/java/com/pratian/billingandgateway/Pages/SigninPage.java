@@ -50,20 +50,7 @@ public class SigninPage {
 		return new HomePage(driver);
 	}
 
-	/*
-	 * public HomePage UsernameClick() throws InterruptedException {
-	 * 
-	 * userclick.click(); return new HomePage(getDriver());
-	 * 
-	 * }
-	 * 
-	 * public AccountPage myAccountClick() throws InterruptedException {
-	 * 
-	 * accountClick.click(); AccountPage accpage1 = new
-	 * AccountPage(getDriver()); return accpage1;
-	 * 
-	 * }
-	 */
+	
 	public WebDriver navigateTo(String pageName) {
 
 		return (driver);

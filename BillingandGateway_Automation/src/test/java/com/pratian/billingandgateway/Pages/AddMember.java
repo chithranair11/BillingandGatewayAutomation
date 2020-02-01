@@ -18,8 +18,6 @@ public class AddMember {
 
 	}
 
-	private By Addmemberlink = By.id("Add Member");
-
 	private By AddMemberPageTitle = By
 			.xpath("/html/body/div[2]/div/div[2]/div[3]/div[1]/div[3]/div[1]/div[1]/div/div/label");
 
@@ -42,13 +40,7 @@ public class AddMember {
 	
 	private By uploadButton= By.id("Documents_0__Document");
 
-	public AddMember addmemberlinkClick() throws InterruptedException {
-
-		driver.findElement(Addmemberlink).click();
-
-		return new AddMember(driver);
-
-	}
+	
 
 	public String memberTermdateAutofill() {
 

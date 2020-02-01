@@ -33,7 +33,7 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		driver.close();
 	}
 
-	@Test(enabled = false)
+	@Test(enabled = true)
 	public void searchmemberPageTitle() throws InterruptedException {
 
 		// TestListener.reportLog("Search member Link");
@@ -44,14 +44,14 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		Thread.sleep(2000);
-		SearchMember searchmember = new SearchMember(driver);
+		HomePage home = new HomePage(driver);
 
-		searchmember.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 
 		// Verifying the Search member Page Tile
 
 		Thread.sleep(2000);
-
+		SearchMember searchmember = new SearchMember(driver);
 		String expectedTitle = "Search Member";
 		String actualTitle = searchmember.getPageTitle();
 		Assert.assertEquals(actualTitle, expectedTitle);
@@ -69,11 +69,12 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
-		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
+        Thread.sleep(2000);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
+		SearchMember search = new SearchMember(driver);
 
 		if (search.isSubscriberidPresent())
 
@@ -95,9 +96,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isMemberlastnamePresent())
@@ -120,9 +121,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isMemberFirstnamePresent())
@@ -145,9 +146,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isDobPresent())
@@ -170,9 +171,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isMemberPCPPresent())
@@ -195,9 +196,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isInsurancecompanyPresent())
@@ -220,9 +221,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.searchButton())
@@ -245,9 +246,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.isclearButtonPresent())
@@ -271,9 +272,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.searchbySubscriberid())
@@ -295,9 +296,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.searchbyMemberlastname())
@@ -319,9 +320,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.searchbyMemberfirstname())
@@ -332,7 +333,7 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		driver.close();
 	}
 
-	@Test(enabled = true)
+	@Test(enabled = false)
 	public void checksearchbyMemberDOB() throws InterruptedException {
 
 		PropertyFile propertyfile = new PropertyFile();
@@ -343,9 +344,9 @@ public class SearchMemberTest extends com.pratian.billingandgateway.Pages.BaseTe
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 
 		SearchMember search = new SearchMember(driver);
-		Thread.sleep(2000);
+		HomePage home = new HomePage(driver);
 
-		search.searchmemberlinkClick();
+		home.searchmemberlinkClick();
 		Thread.sleep(2000);
 
 		if (search.searchbyDOB())

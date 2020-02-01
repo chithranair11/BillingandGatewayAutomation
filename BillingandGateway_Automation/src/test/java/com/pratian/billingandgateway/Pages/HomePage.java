@@ -2,6 +2,8 @@ package com.pratian.billingandgateway.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class HomePage {
@@ -40,6 +42,27 @@ public class HomePage {
 			return true;
 		}
 		return false;
+	}
+	
+    public SearchMember searchmemberlinkClick() throws InterruptedException {
+
+		
+		Thread.sleep(2000);
+		driver.findElement(Searchmemberlink).click();
+		return new SearchMember(driver);
+	}
+    
+    public AddMember addmemberlinkClick() throws InterruptedException {
+
+    	Thread.sleep(2000);
+    	driver.findElement(Addmemberlink).click();
+    	
+    	WebDriverWait wait = new WebDriverWait(driver, 15);
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(Addmemberlink));
+
+		return new AddMember(driver);
+
 	}
 
 }

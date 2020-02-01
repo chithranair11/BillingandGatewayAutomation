@@ -52,7 +52,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 		Thread.sleep(2000);
 		AddMember addmember = new AddMember(driver);
 
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 
 		// Verifying the Add member Page Tile
 
@@ -75,8 +76,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		// Save button in Add memeber Page is present and enabled
@@ -99,8 +100,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		addmember.clickOnSaveButton();
 		Thread.sleep(2000);
@@ -132,8 +133,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		if (addmember.checkCancelButton()) {
 			System.out.println("Cancel Button is visible and enabled in the add member page");
@@ -156,7 +157,7 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
 		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		addmember.clickOnCancelButton();
 		Thread.sleep(5000);
@@ -179,8 +180,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		//Verifying the add member MemberTermdate Field auto fill 
@@ -202,8 +203,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		//Verifying the add member AddressTermdate Field auto fill 
@@ -224,8 +225,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		//Verifying the add member PlanTermdate Field auto fill 
@@ -246,8 +247,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		//Verifying the add member pcpTermdate Field auto fill 
@@ -268,8 +269,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		
 		//Verifying the add member patientRelationship Field auto fill 
@@ -290,8 +291,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		//Verifying the add member patientRelationship Field Read Only 
         Assert.assertTrue(addmember.patientRelationshipReadOnly().getAttribute("readOnly").equals("true"),"Element ReadOnly");
@@ -307,8 +308,8 @@ public class AddMemberTest extends com.pratian.billingandgateway.Pages.BaseTestC
 		signin.open();
 		signin.Login(propertyfile.get("username"), propertyfile.get("password"));
 		AddMember addmember = new AddMember(driver);
-		Thread.sleep(2000);
-		addmember.addmemberlinkClick();
+		HomePage home =new HomePage(driver);
+		home.addmemberlinkClick();
 		Thread.sleep(2000);
 		//Verifying the add member document upload button 
         if(addmember.checkUploadButton())
